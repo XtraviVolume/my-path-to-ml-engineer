@@ -1,0 +1,13 @@
+class Solution:
+    def longestPalindrome(self, s: str) -> int:
+        g={}
+        for char in s:
+            g[char]=g.get(char,0)+1
+        t_l=0
+        k=0
+        for c in g.values():
+            t_l+=(c//2)*2
+            if k==0:
+                if c%2==1:
+                    k=1
+        return t_l+k
